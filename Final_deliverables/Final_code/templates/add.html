@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: 'Arial';
+  box-sizing: border-box;
+  background: url("https://cdn.pixabay.com/photo/2015/08/29/02/08/coins-912718__340.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.header {
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+  padding: 60px;
+  text-align: center;
+  color: #5f3318;
+  text-shadow: 2px 2px 4px #000000;
+
+}
+
+#navbar {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+#navbar a {
+  background-image: linear-gradient(135deg, #956244  10%, #5f3318 100%);
+
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: rgb(224, 15, 196);
+  color: white;
+}
+
+#navbar a.active {
+  background-color: rgb(218, 88, 201);
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 30%;
+  margin-bottom: 30px;
+}
+
+.icon {
+  padding: 10px;
+  background-image: linear-gradient(135deg, #956244  10%, #5f3318 100%);
+  background-color:##5f3318
+  color: white;
+  min-width: 70px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-radius:25PX;
+}
+
+
+.input-field:focus {
+    /* background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% ); */
+    background-image: linear-gradient(135deg, #CD9575  10%, #5f3318 100%);
+
+  }
+
+/* Set a style for the submit button */
+.btn {
+    /* background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% ); */
+  background-color:#5f3318;
+    color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius:25px;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+.btn:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+<form action="{{ url_for('income')}}" method="post">
+<div id="navbar">
+  <a class="active" href="/button"><i class="fa fa-hand-o-left"></i>Back</a>
+  <a href="/display" class="active" ><i class="fa fa-table"></i> History Table</a>
+</div>
+
+
+<div class="content">
+ 
+    <form style="max-width:500px;margin:auto">
+        <CENTER>
+          <h2><i class="fa fa-plus-square icon"> ADD YOUR EXPENSE</i></h2><CENTER>
+        <div class="input-container">
+            <i class="fa fa-rupee icon"></i>
+          <input class="input-field" type="number" placeholder="Amount" name="amount">
+        </div>
+      
+        <div class="input-container">
+            <i class="fa fa-money icon"></i>
+          <input class="input-field" type="number" placeholder="Income" name="income">
+        </div>
+        
+        <div class="input-container">
+            <i class="fa fa-bar-chart-o icon"></i>
+          <input class="input-field" type="number" placeholder="Expense" name="expense">
+        </div>
+        <div class="input-container">
+          <i class="fa fa-money icon"></i>
+        <input class="input-field" type="date" placeholder="date" name="expensedate">
+      </div>
+        <!-- <p> Expense Details<br>(like Grocery,Education,Hospital,etc.....)</p> -->
+        <div class="input-container">
+            <i class="fa fa-calendar-check-o icon"></i>
+	    <select name="category" >
+		    <option value="hos">Hospital</option>
+		    <option value="ent">Entertainment</option>
+		    <option value="shop">Shopping</option>
+		    <option value="groc">Grocery</option>
+		    <option value="edu">Eduacation</option>
+	    </select>
+	</div>
+       
+        <button type="submit" class="btn"><i class="fa fa-thumbs-up" style="font-size:24px">Add Expense</i></button>
+      </form></div>
+</form>    
+
+
+
+</body>
+</html>
